@@ -41,4 +41,4 @@ sed -i "s/Xiaomi Mi Router 4A Gigabit Edition/小米4A千兆版路由/g" target/
 
 mv -f ../MI-R4A/banner package/base-files/files/etc/banner
 #加载config
-mv -f ../MI-R4A/mi-r4a.config .config
+mv -f ../MI-R4A/mi-r4a1.config .config
