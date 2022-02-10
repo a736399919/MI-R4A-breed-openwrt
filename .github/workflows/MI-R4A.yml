@@ -24,8 +24,8 @@ env:
   #REPO_BRANCH: master
   #FEEDS_CONF: MI-R4A/R4A.conf.default
   #CONFIG_FILE: MI-R4A/R4A.config
-  DIY_P1_SH: MI-R4A/diy-part1.sh
-  DIY_P2_SH: MI-R4A/R4A.sh
+  DIY_P1_SH: MI-R4A/R4A.sh
+  DIY_P2_SH: MI-R4A/diy-part1.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
@@ -58,7 +58,6 @@ jobs:
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
-        cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Load custom configuration2
