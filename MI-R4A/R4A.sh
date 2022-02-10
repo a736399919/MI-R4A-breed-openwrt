@@ -39,5 +39,6 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 #更改主机型号，支持中文。 
 sed -i "s/Xiaomi Mi Router 4A Gigabit Edition/小米4A千兆版路由/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-4a-gigabit.dts
 
+mv -f ../MI-R4A-breed-openwrt/MI-R4A/banner package/base-files/files/etc/banner
 #加载config
-[ -e ../mi-r4a.config ] && mv -f ../mi-r4a.config .config
+#mv -f ../MI-R4A-breed-openwrt/MI-R4A/mi-r4a.config .config
