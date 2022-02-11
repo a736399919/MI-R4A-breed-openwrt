@@ -37,7 +37,7 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 # 修改主机名字，把YOU-R4A修改你喜欢的就行（不能纯数字或者使用中文）
 #sed -i '/uci commit system/i\uci set system.@system[0].hostname='R4A-G'' package/lean/default-settings/files/zzz-default-settings
 #更改主机型号，支持中文。 
-sed -i "s/Xiaomi Mi Router 4A Gigabit Edition/雷军4A千兆版路由/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-4a-gigabit.dts
+sed -i "s/Xiaomi Mi Router 4A Gigabit Edition/许家专用4A路由器/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-4a-gigabit.dts
 
 mv -f ../MI-R4A/banner package/base-files/files/etc/banner
 #加载config
