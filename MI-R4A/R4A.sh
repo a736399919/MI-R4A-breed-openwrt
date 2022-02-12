@@ -12,9 +12,9 @@ git clone -b openwrt-21.02 --single-branch https://github.com/immortalwrt/immort
 cd openwrt
 #添加passwall
 #sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall.git' feeds.conf.default
-#./scripts/feeds clean
-#./scripts/feeds update -a
-#./scripts/feeds install -a
+./scripts/feeds clean
+./scripts/feeds update -a
+./scripts/feeds install -a
 
 #添加自定义插件
 git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
@@ -41,4 +41,4 @@ sed -i "s/Xiaomi Mi Router 4A Gigabit Edition/许家专用4A路由器/g" target/
 
 mv -f ../MI-R4A/banner package/base-files/files/etc/banner
 #加载config
-mv -f ../MI-R4A/mi-r4a1.config .config
+mv -f ../MI-R4A/mi-r4a.config .config
