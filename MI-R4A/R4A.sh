@@ -48,4 +48,6 @@ sed -i '$a\exit 0' package/emortal/default-settings/files/99-default-settings
 
 mv -f ../MI-R4A/banner package/base-files/files/etc/banner
 #加载config
-mv -f ../MI-R4A/mi-r4a.config .config
+mv -f ../MI-R4A/config.buildinfo .config
+#mv -f ../MI-R4A/mi-r4a.config .config
+
