@@ -1,0 +1,88 @@
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_mt7621=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_xiaomi_mi-router-4a-gigabit=y
+CONFIG_KERNEL_BUILD_DOMAIN="20100010"
+CONFIG_KERNEL_BUILD_USER="Fk"
+CONFIG_LIBCURL_COOKIES=y
+CONFIG_LIBCURL_CRYPTO_AUTH=y
+CONFIG_LIBCURL_FILE=y
+CONFIG_LIBCURL_FTP=y
+CONFIG_LIBCURL_HTTP=y
+CONFIG_LIBCURL_LDAP=y
+CONFIG_LIBCURL_LDAPS=y
+CONFIG_LIBCURL_NGHTTP2=y
+CONFIG_LIBCURL_OPENSSL=y
+CONFIG_LIBCURL_PROXY=y
+CONFIG_LIBCURL_TFTP=y
+CONFIG_LIBCURL_THREADED_RESOLVER=y
+CONFIG_LIBCURL_TLS_SRP=y
+CONFIG_LIBCURL_UNIX_SOCKETS=y
+# CONFIG_PACKAGE_TURBOACC_INCLUDE_BBR_CCA is not set
+CONFIG_PACKAGE_chinadns-ng=y
+CONFIG_PACKAGE_coreutils=y
+CONFIG_PACKAGE_coreutils-base64=y
+CONFIG_PACKAGE_coreutils-nohup=y
+CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_dns2socks=y
+CONFIG_PACKAGE_ip-full=y
+CONFIG_PACKAGE_ip6tables=y
+CONFIG_PACKAGE_ipset=y
+CONFIG_PACKAGE_ipt2socks=y
+CONFIG_PACKAGE_iptables-mod-iprange=y
+CONFIG_PACKAGE_iptables-mod-tproxy=y
+CONFIG_PACKAGE_kmod-ip6tables=y
+CONFIG_PACKAGE_kmod-ipt-iprange=y
+CONFIG_PACKAGE_kmod-ipt-tproxy=y
+CONFIG_PACKAGE_kmod-nf-ipt6=y
+CONFIG_PACKAGE_kmod-nf-reject6=y
+# CONFIG_PACKAGE_kmod-tcp-bbr is not set
+CONFIG_PACKAGE_kmod-tun=y
+CONFIG_PACKAGE_libbpf=y
+CONFIG_PACKAGE_libcap-ng=y
+CONFIG_PACKAGE_libcurl=y
+CONFIG_PACKAGE_libelf=y
+CONFIG_PACKAGE_libipset=y
+CONFIG_PACKAGE_libnghttp2=y
+CONFIG_PACKAGE_libopenldap=y
+CONFIG_PACKAGE_librt=y
+CONFIG_PACKAGE_libsasl2=y
+CONFIG_PACKAGE_libuci-lua=y
+CONFIG_PACKAGE_libuuid=y
+CONFIG_PACKAGE_libuv=y
+CONFIG_PACKAGE_luci-app-adblock-plus=y
+# CONFIG_PACKAGE_luci-app-adguardhome_INCLUDE_binary is not set
+CONFIG_PACKAGE_luci-app-autoreboot=y
+# CONFIG_PACKAGE_luci-app-diskman_INCLUDE_btrfs_progs is not set
+# CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk is not set
+CONFIG_PACKAGE_luci-app-fileassistant=y
+# CONFIG_PACKAGE_luci-app-filetransfer is not set
+CONFIG_PACKAGE_luci-app-passwall=y
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus is not set
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng is not set
+# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_IPT2Socks is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_Obfs is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan is not set
+CONFIG_PACKAGE_luci-app-upnp=y
+CONFIG_PACKAGE_luci-app-uugamebooster=y
+CONFIG_PACKAGE_luci-app-vlmcsd=y
+CONFIG_PACKAGE_luci-i18n-autoreboot-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-upnp-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-vlmcsd-zh-cn=y
+CONFIG_PACKAGE_luci-theme-argon-2.2.9=y
+CONFIG_PACKAGE_microsocks=y
+CONFIG_PACKAGE_miniupnpd=y
+CONFIG_PACKAGE_resolveip=y
+CONFIG_PACKAGE_tcping=y
+CONFIG_PACKAGE_unzip=y
+CONFIG_PACKAGE_uugamebooster=y
+CONFIG_PACKAGE_vlmcsd=y
+CONFIG_PACKAGE_xray-core=y
+CONFIG_PACKAGE_zlib=y
