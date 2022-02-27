@@ -27,7 +27,7 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-a
 #修改lan口地址
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate                                  
 #修改机器名称
-sed -i 's/OpenWrt/R4A/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/MiWiFi/g' package/base-files/files/bin/config_generate
 #修改wifi名称
 sed -i 's/OpenWrt/R4A/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #默认打开WiFi
@@ -35,9 +35,16 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 #修改时区
 #sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 # 修改主机名字，把YOU-R4A修改你喜欢的就行（不能纯数字或者使用中文）
-#sed -i '/uci commit system/i\uci set system.@system[0].hostname='R4A-G'' package/lean/default-settings/files/zzz-default-settings
+#sed -i '/uci commit system/i\uci set system.@system[0].hostname='R4A-G'' package/emortal/default-settings/files/99-default-settings
 #更改主机型号，支持中文。 
 sed -i "s/Xiaomi Mi Router 4A Gigabit Edition/许家专用4A路由器/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-4a-gigabit.dts
+
+#删除包含"exit 0"的行
+sed -i '/exit 0/d' package/emortal/default-settings/files/99-default-settings
+#添加自定义命令到rc.loacal
+sed -i '$a sed -i '\''/exit 0/i\/etc/init.d/network restart'\'' /etc/rc.local' package/emortal/default-settings/files/99-default-settings
+#添加包含"exit 0"的行
+sed -i '$a\exit 0' package/emortal/default-settings/files/99-default-settings
 
 mv -f ../MI-R4A/banner package/base-files/files/etc/banner
 #加载config
