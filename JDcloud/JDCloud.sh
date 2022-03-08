@@ -25,6 +25,7 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-a
 #git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-1.7.2
 
 #添加自定义插件
+svn checkout https://github.com/Lienol/openwrt/branches/main/package/default-settings package/default-settings
 git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 git clone https://github.com/ntlf9t/luci-app-easymesh package/luci-app-easymesh
 svn checkout https://github.com/Hyy2001X/AutoBuild-Packages/trunk/luci-app-webd package/luci-app-webd
@@ -53,4 +54,4 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 #sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 
 #加载config
-[ -e ../mi-r4a.config ] && mv -f ../mi-r4a.config.new .config
+mv -f ../JDCloud.config .config
