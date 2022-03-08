@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: JDcloud
+name: JDCloud
 
 on:
   repository_dispatch:
@@ -24,7 +24,7 @@ env:
   #REPO_BRANCH: master
   #FEEDS_CONF: MI-R4A/R4A.conf.default
   #CONFIG_FILE: MI-R4A/R4A.config
-  DIY_P1_SH: JDcloud/JDcloud.sh
+  DIY_P1_SH: JDCloud/JDCloud.sh
   DIY_P2_SH: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
