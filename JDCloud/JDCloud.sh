@@ -6,9 +6,7 @@
 #   Blog: https://p3terx.com
 #=================================================
 #克隆源码
-git clone -b exp --single-branch https://github.com/LGA1150/openwrt.git openwrt
-rm -rf openwrt/feeds.conf.default
-wget -O openwrt/feeds.conf.default https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/feeds.conf.default
+git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
 cd openwrt
 ./scripts/feeds clean
 ./scripts/feeds update -a
@@ -18,12 +16,13 @@ cd openwrt
 sed -i "s/JDCloud RE-SP-01B/京东漏油器/g" target/linux/ramips/dts/mt7621_jdcloud_re-sp-01b.dts
 
 #添加主题
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-2.2.9
-#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge package/luci-theme-edge
-#git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-1.7.2
+git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
+#git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-2.2.9
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge package/luci-theme-edge
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-1.7.2
 
 #添加自定义插件
-svn checkout https://github.com/immortalwrt/immortalwrt/branches/master/package/emortal/default-settings package/emortal/default-settings/
+#svn checkout https://github.com/immortalwrt/immortalwrt/branches/master/package/emortal/default-settings package/emortal/default-settings/
 git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 git clone https://github.com/ntlf9t/luci-app-easymesh package/luci-app-easymesh
 svn checkout https://github.com/Hyy2001X/AutoBuild-Packages/trunk/luci-app-webd package/luci-app-webd
