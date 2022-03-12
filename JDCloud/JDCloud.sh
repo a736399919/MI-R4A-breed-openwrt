@@ -36,15 +36,20 @@ sed -i '$a sed -i '\''s/services/nas/g'\'' /usr/lib/lua/luci/controller/samba4.l
 sed -i '$a\sed -i '\''s/services/nas/g'\'' /usr/share/luci/menu.d/luci-app-samba4.json' package/emortal/default-settings/files/99-default-settings
 sed -i '$a\sed -i '\''s/services/nas/g'\'' /usr/lib/lua/luci/controller/ksmbd.lua' package/emortal/default-settings/files/99-default-settings
 sed -i '$a\sed -i '\''s/services/nas/g'\'' /usr/share/luci/menu.d/luci-app-ksmbd.json' package/emortal/default-settings/files/99-default-settings
+
+#添加LingMaxDNS
+sed -i '$a sed -i '\''$a #iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 8287'\'' /etc/firewall.user' package/emortal/default-settings/files/99-default-settings
+sed -i '$a sed -i '\''/exit 0/i\/etc/init.d/network restart'\'' /etc/rc.local' package/emortal/default-settings/files/99-default-settings
+
 #添加包含"exit 0"的行
 sed -i '$a\exit 0' package/emortal/default-settings/files/99-default-settings
 
 #修改lan口地址
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate                                  
 #修改机器名称
-sed -i 's/OpenWrt/JDcloud/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/JDCloud/g' package/base-files/files/bin/config_generate
 #修改wifi名称
-sed -i 's/OpenWrt/JDcloud/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/OpenWrt/JDCloud/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #默认打开WiFi
 sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #修改时区
