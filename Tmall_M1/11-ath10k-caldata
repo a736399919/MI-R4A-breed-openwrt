@@ -187,7 +187,7 @@ case "$FIRMWARE" in
 			/lib/firmware/ath10k/QCA9888/hw2.0/board.bin
 		rm /lib/firmware/ath10k/QCA9888/hw2.0/board-2.bin
 		;;
-  glinet,gl-ar750|\  
+  	glinet,gl-ar750|\  
 	comfast,cf-e560ac)
 		ath10kcal_extract "art" 0x5000 0x2f20
 		ath10kcal_patch_mac_crc $(macaddr_add $(mtd_get_mac_binary art 0x0) +2)
