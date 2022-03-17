@@ -16,6 +16,10 @@ cd openwrt
 #更改主机型号，支持中文。 
 sed -i "s/Letv LBA-047-CH/天猫路由器M1/g" target/linux/ath79/dts/qca9531_letv_lba-047-ch.dts
 
+rm -rf target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+rm -rf target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+mv ../Tmall_M1/qca9531_glinet_gl-ar750.dts target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+mv ../Tmall_M1/11-ath10k-caldata target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
 #添加主题
 git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge package/luci-theme-edge
