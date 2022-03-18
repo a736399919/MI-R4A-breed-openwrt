@@ -7,7 +7,6 @@
 #=================================================
 #克隆源码
 #git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
-git clone -b openwrt-18.06 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
 cd openwrt
 ./scripts/feeds clean
 ./scripts/feeds update -a
@@ -16,9 +15,9 @@ cd openwrt
 #更改主机型号，支持中文。 
 sed -i "s/Letv LBA-047-CH/天猫路由器M1/g" target/linux/ath79/dts/qca9531_letv_lba-047-ch.dts
 
-rm -rf target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+rm -rf target/linux/ath79/dts/qca9531_letv_lba-047-ch.dts
 rm -rf target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-mv ../Tmall_M1/qca9531_glinet_gl-ar750.dts target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+mv ../Tmall_M1/qca9531_glinet_gl-ar750.dts target/linux/ath79/dts/qca9531_letv_lba-047-ch.dts
 mv ../Tmall_M1/11-ath10k-caldata target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
 #添加主题
 git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
@@ -48,7 +47,7 @@ git clone https://github.com/ntlf9t/luci-app-easymesh package/luci-app-easymesh
 #sed -i '$a\exit 0' package/emortal/default-settings/files/99-default-settings
 
 #修改lan口地址
-sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate                                  
+#sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate                                  
 #修改机器名称
 sed -i 's/OpenWrt/Tmall/g' package/base-files/files/bin/config_generate
 #修改wifi名称
