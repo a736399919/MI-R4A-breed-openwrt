@@ -59,4 +59,4 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 
 #加载config
 #mv -f ../Tmall_M1/M1_config.buildinfo .config
-mv -f ../Tmall_M1/Tmall_M1.config .config
+mv -f ../Tmall_M1/1Tmall_M1.config .config
