@@ -58,4 +58,5 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 #sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 
 #加载config
-mv -f ../Tmall_M1/M1_config.buildinfo .config
+#mv -f ../Tmall_M1/M1_config.buildinfo .config
+mv -f ../Tmall_M1/Tmall_M1.config .config
