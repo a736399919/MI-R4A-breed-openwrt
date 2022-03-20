@@ -17,7 +17,8 @@ sed -i "s/Letv LBA-047-CH/天猫路由器M1/g" target/linux/ath79/dts/qca9531_le
 
 rm -rf target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
 rm -rf target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-mv ../Tmall_M1/qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
+#mv ../Tmall_M1/qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
+mv ../Tmall_M1/m1_qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
 mv ../Tmall_M1/11-ath10k-caldata target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
 #添加主题
 git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
