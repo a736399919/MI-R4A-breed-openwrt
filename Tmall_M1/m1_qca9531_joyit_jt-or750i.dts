@@ -43,6 +43,7 @@
 			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
 		};
 	};
+};
 
 &pinmux {
 	/* GPIO 13: LED_LINK_5 (WAN) */
