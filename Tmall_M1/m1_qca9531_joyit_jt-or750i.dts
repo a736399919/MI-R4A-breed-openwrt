@@ -7,12 +7,12 @@
 
 / {
 	compatible = "joyit,jt-or750i", "qca,qca9531";
-	model = "TmallRouter_M1";
+	model = "Joy-IT JT-OR750i";
 
 	aliases {
-		led-boot = &led_status_green;
+		led-boot = &led_status_red;
 		led-failsafe = &led_status_red;
-		led-running = &led_status_green;
+		led-running = &led_status_blue;
 		led-upgrade = &led_status_red;
 		label-mac-device = &eth0;
 	};
@@ -31,31 +31,23 @@
 		compatible = "gpio-leds";
 
 		pinctrl-names = "default";
-		pinctrl-0 = <&jtag_disable_pins &pinmux_led_eth_pins>;
+		pinctrl-0 = <&led_wan_pin>;
 
-		led_status_green: status_green {
-			label = "green:status";
-			gpios = <&gpio 11 GPIO_ACTIVE_HIGH>;
-			default-state = "on";
+		led_status_blue: status_blue {
+			label = "blue:status";
+			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
 		};
 
 		led_status_red: status_red {
 			label = "red:status";
-			gpios = <&gpio 4 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
 		};
 	};
-};
 
 &pinmux {
-	pinmux_led_eth_pins: pinmux_led_eth_pins {
-		pinctrl-single,bits = \
-			/* GPIO 13: LED_LINK_5 (WAN) */     \
-			<0x04 0x0000002d 0x000000ff>,      \
-			/* GPIO 14: LED_LINK_2 (LAN 3) */  \
-			/* GPIO 15: LED_LINK_3 (LAN 2) */  \
-			<0x0c 0x2b2a0000 0xffff0000>,      \
-			/* GPIO 16: LED_LINK_4 (LAN 1) */  \
-			<0x10 0x0000002c 0x000000ff>;
+	/* GPIO 13: LED_LINK_5 (WAN) */
+	led_wan_pin: pinmux_led_wan_pin {
+		pinctrl-single,bits = <0x04 0x0000002d 0x000000ff>;
 	};
 };
 
