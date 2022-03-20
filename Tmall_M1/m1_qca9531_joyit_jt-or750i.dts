@@ -107,12 +107,10 @@
 };
 
 &eth1 {
+	compatible = "qca,qca9530-eth", "syscon", "simple-mfd";
+
 	nvmem-cells = <&macaddr_art_6>;
 	nvmem-cell-names = "mac-address";
-};
-
-&pcie0 {
-	status = "okay";
 };
 
 &wmac {
