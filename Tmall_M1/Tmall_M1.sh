@@ -12,9 +12,6 @@ cd openwrt
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-#更改主机型号，支持中文。 
-sed -i "s/Letv LBA-047-CH/天猫路由器M1/g" target/linux/ath79/dts/qca9531_letv_lba-047-ch.dts
-
 rm -rf target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
 rm -rf target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
 #mv ../Tmall_M1/qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
@@ -57,6 +54,8 @@ sed -i 's/OpenWrt/Tmall/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #修改时区
 #sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
+#更改主机型号，支持中文。 
+sed -i "s/Joy-IT JT-OR750i/天猫路由器M1/g" target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
 
 #加载config
 #mv -f ../Tmall_M1/M1_config.buildinfo .config
