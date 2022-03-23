@@ -7,7 +7,8 @@
 #=================================================
 #克隆源码
 #git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
-git clone -b openwrt-22.03 --single-branch https://github.com/openwrt/openwrt
+#git clone -b openwrt-22.03 --single-branch https://github.com/openwrt/openwrt
+git clone -b 19.07 --single-branch https://github.com/Lienol/openwrt
 cd openwrt
 
 #删除包含"routing"的行
@@ -19,11 +20,18 @@ cd openwrt
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-rm -rf target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
-rm -rf target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-#mv ../Tmall_M1/qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
-mv ../Tmall_M1/m1_qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
-mv ../Tmall_M1/11-ath10k-caldata target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+#rm -rf target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
+#rm -rf target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+##mv ../Tmall_M1/qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
+#mv ../Tmall_M1/m1_qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
+#mv ../Tmall_M1/11-ath10k-caldata target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+
+
+rm -rf target/linux/ath79/dts/qca9531_glinet_gl-x750.dts
+rm -rf target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+mv ../Tmall_M1/lienol_qca9531_glinet_gl-x750.dts target/linux/ath79/dts/qca9531_glinet_gl-x750.dts
+mv ../Tmall_M1/lienol_1907_11-ath10k-caldata target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+
 #添加主题
 git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge package/luci-theme-edge
@@ -68,4 +76,5 @@ sed -i "s/Joy-IT JT-OR750i/天猫路由器M1/g" target/linux/ath79/dts/qca9531_j
 
 #加载config
 #mv -f ../Tmall_M1/M1_config.buildinfo .config
-mv -f ../Tmall_M1/Tmall_M1.config .config
+#mv -f ../Tmall_M1/Tmall_M1.config .config
+mv -f ../Tmall_M1/Lienol.config .config
