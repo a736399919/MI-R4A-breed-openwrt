@@ -8,6 +8,12 @@
 #克隆源码
 git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
 cd openwrt
+
+#删除包含"routing"的行
+sed -i '/routing/d' feeds.conf.default
+###
+sed -i '$a src-git routing https://github.com/openwrt/routing.git;openwrt-21.02' feeds.conf.default
+
 ./scripts/feeds clean
 ./scripts/feeds update -a
 ./scripts/feeds install -a
