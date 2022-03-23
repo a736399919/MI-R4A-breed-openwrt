@@ -7,13 +7,13 @@
 #=================================================
 #克隆源码
 #git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
-git clone -b openwrt-21.02 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
+git clone -b openwrt-22.03 --single-branch https://github.com/openwrt/openwrt
 cd openwrt
 
 #删除包含"routing"的行
-sed -i '/routing/d' feeds.conf.default
+#sed -i '/routing/d' feeds.conf.default
 ###
-sed -i '$a src-git routing https://github.com/openwrt/routing.git;openwrt-21.02' feeds.conf.default
+#sed -i '$a src-git routing https://github.com/openwrt/routing.git;openwrt-21.02' feeds.conf.default
 
 ./scripts/feeds clean
 ./scripts/feeds update -a
@@ -28,6 +28,7 @@ mv ../Tmall_M1/11-ath10k-caldata target/linux/ath79/generic/base-files/etc/hotpl
 git clone https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-edge package/luci-theme-edge
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-1.7.2
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-2.2.9
 
 #添加自定义插件
 git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
