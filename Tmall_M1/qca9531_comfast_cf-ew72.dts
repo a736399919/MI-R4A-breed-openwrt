@@ -23,18 +23,18 @@
 		pinctrl-0 = <&jtag_disable_pins>;
 
 		lan {
-			label = "blue:lan";
-			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
-		};
-
-		led_wan: wan {
-			label = "blue:wan";
+			label = "red:lan";
 			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
 		};
 
-		wlan {
-			label = "blue:wlan";
+		led_wan: wan {
+			label = "green:wan";
 			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
+		};
+
+		wlan {
+			label = "green:wlan";
+			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "phy0tpt";
 		};
 	};
@@ -48,15 +48,6 @@
 			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
 			debounce-interval = <60>;
 		};
-	};
-
-	watchdog {
-		compatible = "linux,wdt-gpio";
-
-		gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
-		hw_algo = "toggle";
-		hw_margin_ms = <1200>;
-		always-running;
 	};
 };
 
