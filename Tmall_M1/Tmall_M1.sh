@@ -7,13 +7,12 @@
 #=================================================
 #克隆源码
 git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
-#git clone -b openwrt-22.03 --single-branch https://github.com/openwrt/openwrt
 cd openwrt
 
 #删除包含"routing"的行
-#sed -i '/routing/d' feeds.conf.default
+sed -i '/routing/d' feeds.conf.default
 ###
-#sed -i '$a src-git routing https://github.com/openwrt/routing.git;openwrt-21.02' feeds.conf.default
+sed -i '$a src-git routing https://github.com/openwrt/routing.git;openwrt-21.02' feeds.conf.default
 
 ./scripts/feeds clean
 ./scripts/feeds update -a
@@ -23,8 +22,6 @@ cd openwrt
 #rm -rf target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
 #mv ../Tmall_M1/m1_qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
 #mv ../Tmall_M1/11-ath10k-caldata target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-
-
 
 mv ../Tmall_M1/qca9531_comfast_cf-ew72.dts target/linux/ath79/dts/qca9531_comfast_cf-ew72.dts
 
@@ -69,7 +66,7 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 #修改时区
 #sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 #更改主机型号，支持中文。 
-sed -i "s/Joy-IT JT-OR750i/天猫路由器M1/g" target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
+sed -i "s/COMFAST CF-EW72/天猫路由器M1/g" target/linux/ath79/dts/qca9531_comfast_cf-ew72.dts
 
 #加载config
 #mv -f ../Tmall_M1/M1_config.buildinfo .config
