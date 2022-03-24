@@ -6,9 +6,8 @@
 #   Blog: https://p3terx.com
 #=================================================
 #克隆源码
-#git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
+git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
 #git clone -b openwrt-22.03 --single-branch https://github.com/openwrt/openwrt
-git clone -b openwrt-18.06 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
 cd openwrt
 
 #删除包含"routing"的行
