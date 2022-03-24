@@ -26,7 +26,7 @@ cd openwrt
 
 
 
-mv ../Tmall_M1/qca9531_comfast_cf-e313ac.dts target/linux/ath79/dts/qca9531_comfast_cf-e313ac.dts
+mv ../Tmall_M1/qca9531_comfast_cf-ew72.dts target/linux/ath79/dts/qca9531_comfast_cf-ew72.dts
 
 
 #添加主题
@@ -74,4 +74,4 @@ sed -i "s/Joy-IT JT-OR750i/天猫路由器M1/g" target/linux/ath79/dts/qca9531_j
 #加载config
 #mv -f ../Tmall_M1/M1_config.buildinfo .config
 #mv -f ../Tmall_M1/Tmall_M1.config .config
-mv -f ../Tmall_M1/e313ac.config .config
+mv -f ../Tmall_M1/ew72.config .config
