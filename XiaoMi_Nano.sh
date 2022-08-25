@@ -6,7 +6,7 @@
 #   Blog: https://p3terx.com
 #=================================================
 #克隆源码
-git clone https://github.com/coolsnowwolf/lede openwrt
+git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
 cd openwrt
 
 ./scripts/feeds clean
