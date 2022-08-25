@@ -6,7 +6,7 @@
 #   Blog: https://p3terx.com
 #=================================================
 #克隆源码
-git clone https://github.com/padavanonly/immortalwrt openwrt
+git clone https://github.com/coolsnowwolf/lede openwrt
 cd openwrt
 
 ./scripts/feeds clean
