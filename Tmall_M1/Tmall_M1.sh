@@ -6,8 +6,7 @@
 #   Blog: https://p3terx.com
 #=================================================
 #克隆源码
-#git clone -b openwrt-18.06-k5.4 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
-git clone -b master --single-branch https://github.com/x-wrt/x-wrt.git openwrt
+git clone -b master --single-branch https://github.com/openwrt/openwrt
 cd openwrt
 
 ##删除包含"routing"的行
@@ -17,11 +16,6 @@ cd openwrt
 ./scripts/feeds clean
 ./scripts/feeds update -a
 ./scripts/feeds install -a
-
-#rm -rf target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
-#rm -rf target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-#mv ../Tmall_M1/m1_qca9531_joyit_jt-or750i.dts target/linux/ath79/dts/qca9531_joyit_jt-or750i.dts
-#mv ../Tmall_M1/11-ath10k-caldata target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
 
 mv ../Tmall_M1/qca9531_comfast_cf-ew72.dts target/linux/ath79/dts/qca9531_comfast_cf-ew72.dts
 
@@ -33,9 +27,10 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-a
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-2.2.9
 
 #添加自定义插件
-git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
+#git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 git clone https://github.com/ntlf9t/luci-app-easymesh package/luci-app-easymesh
 git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant package/luci-app-fileassistan
 #svn checkout https://github.com/Hyy2001X/AutoBuild-Packages/trunk/luci-app-webd package/luci-app-webd
 #svn checkout https://github.com/Hyy2001X/AutoBuild-Packages/trunk/webd package/webd
 #sed -i '$a chmod 775 /usr/bin/webd\n' package/emortal/default-settings/files/99-default-settings
@@ -56,7 +51,7 @@ git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tc
 #sed -i '$a\exit 0' package/emortal/default-settings/files/99-default-settings
 
 #修改lan口地址
-sed -i 's/192.168.15.1/192.168.10.1/g' package/base-files/files/bin/config_generate                                  
+sed -i 's/192.168.1.1/192.168.10.10/g' package/base-files/files/bin/config_generate                                  
 #修改机器名称
 sed -i 's/OpenWrt/Tmall/g' package/base-files/files/bin/config_generate
 #修改wifi名称
@@ -64,7 +59,7 @@ sed -i 's/OpenWrt/Tmall_M1/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #默认打开WiFi
 sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #修改时区
-#sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
+sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 #更改主机型号，支持中文。 
 sed -i "s/COMFAST CF-EW72/Tmall-M1/g" target/linux/ath79/dts/qca9531_comfast_cf-ew72.dts
 
@@ -72,4 +67,4 @@ sed -i "s/COMFAST CF-EW72/Tmall-M1/g" target/linux/ath79/dts/qca9531_comfast_cf-
 #mv -f ../Tmall_M1/M1_config.buildinfo .config
 #mv -f ../Tmall_M1/Tmall_M1.config .config
 #mv -f ../Tmall_M1/ew72.config .config
-mv -f ../Tmall_M1/xwrt_ew72.config .config
+mv -f ../Tmall_M1/openwrt_ew72.config .config
